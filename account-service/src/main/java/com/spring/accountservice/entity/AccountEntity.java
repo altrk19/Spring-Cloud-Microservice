@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Table(value = "accounts")
-public class Account implements Serializable {
+public class AccountEntity implements Serializable {
 
     @PrimaryKey
     private String id = UUID.randomUUID().toString();
@@ -17,8 +17,17 @@ public class Account implements Serializable {
     @Column(value = "uname")
     private String username;
 
+    @Column(value = "name")
+    private String name;
+
+    @Column(value = "surname")
+    private String surname;
+
     @Column(value = "email")
     private String email;
+
+    @Column(value = "birth_date")
+    private Date birthDate;
 
     @Column(value = "pwd")
     private String passwd;
@@ -29,17 +38,17 @@ public class Account implements Serializable {
     @Column(value = "is_active")
     private Boolean active;
 
-    public Account() {
+    public AccountEntity() {
     }
 
-    public Account(String id) {
-        this.id = id;
-    }
-
-    public Account(String id, String username, String email, String passwd, Date createdAt, Boolean active) {
+    public AccountEntity(String id, String username, String name, String surname, String email, Date birthDate,
+                         String passwd, Date createdAt, Boolean active) {
         this.id = id;
         this.username = username;
+        this.name = name;
+        this.surname = surname;
         this.email = email;
+        this.birthDate = birthDate;
         this.passwd = passwd;
         this.createdAt = createdAt;
         this.active = active;
@@ -79,5 +88,29 @@ public class Account implements Serializable {
 
     public Boolean getActive() {
         return active;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }

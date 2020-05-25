@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.spring</groupId>
-	<artifactId>account-service</artifactId>
+	<artifactId>accountEntity-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>account-service</name>
+	<name>accountEntity-service</name>
 	<description>Account Service</description>
 
 	<properties>

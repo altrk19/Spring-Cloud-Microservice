@@ -1,1 +1,1 @@
-localhost:8501/account
+localhost:8501/accountEntity

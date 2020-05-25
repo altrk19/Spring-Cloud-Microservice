@@ -1,1 +1,1 @@
-localhost:8888/account-service.yml   -> config values are opened to access
+localhost:8888/accountEntity-service.yml   -> config values are opened to access
