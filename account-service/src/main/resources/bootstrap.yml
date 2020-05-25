@@ -1,0 +1,11 @@
+server:
+  port: 8501
+
+spring:
+  application:
+    name: account-service
+
+  cloud:
+    config:
+      profile: native
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
