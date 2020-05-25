@@ -6,7 +6,7 @@
 		<groupId>com.microservice</groupId>
 		<artifactId>service-parent</artifactId>
 		<version>10.0.1</version>
-		<relativePath>../service-parent/pom.xml</relativePath>
+		<relativePath/>
 	</parent>
 	<groupId>com.spring</groupId>
 	<artifactId>account-service</artifactId>

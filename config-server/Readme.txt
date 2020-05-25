@@ -1,0 +1,1 @@
+localhost:8888/account-service.yml   -> config values are opened to access
