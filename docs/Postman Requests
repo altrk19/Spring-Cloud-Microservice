@@ -1,0 +1,24 @@
+1. Create Account
+POST - http://localhost:8501/account
+{
+	"username" : "aturk",
+    "name" : "Ali",
+    "surname" : "TURK",
+    "email" : "altrk19@gmail.com",
+    "birthDate" : "1900-01-01"
+}
+
+2. Get All Accounts
+GET - http://localhost:8501/account
+
+3.Create Ticket
+POST - http://localhost:8502/ticket
+{
+    "description": "Test Ticket 1",
+    "notes": "Test Ticket 1 - Docker Compose Error",
+    "assignee": "aturk",
+    "priorityType": "URGENT",
+    "ticketStatus": "OPEN",
+    "ticketDate": "2020-05-05"
+}
+

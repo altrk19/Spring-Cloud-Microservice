@@ -15,6 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class TicketEntity extends BaseEntityModel {
 
+    @Id
     @Getter
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
@@ -50,7 +51,7 @@ public class TicketEntity extends BaseEntityModel {
     @Getter
     @Setter
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "priority_type")
+    @Column(name = "ticket_status")
     private TicketStatus ticketStatus;
 
 }
