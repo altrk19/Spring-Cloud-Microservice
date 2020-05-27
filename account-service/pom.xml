@@ -6,12 +6,12 @@
 		<groupId>com.microservice</groupId>
 		<artifactId>service-parent</artifactId>
 		<version>10.0.1</version>
-		<relativePath/>
+		<relativePath>../service-parent/pom.xml</relativePath>
 	</parent>
 	<groupId>com.spring</groupId>
-	<artifactId>accountEntity-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>accountEntity-service</name>
+	<artifactId>account-service</artifactId>
+	<version>10.0.1</version>
+	<name>account-service</name>
 	<description>Account Service</description>
 
 	<properties>
@@ -36,6 +36,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 			<version>1.4.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microservice</groupId>
+			<artifactId>service-feign-client</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>

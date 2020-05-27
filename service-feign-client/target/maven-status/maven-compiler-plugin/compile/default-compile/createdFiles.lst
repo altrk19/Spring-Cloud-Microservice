@@ -1,0 +1,3 @@
+com\microservice\client\AccountServiceClient.class
+com\microservice\client\dto\AccountResource.class
+com\microservice\client\config\AppConfig.class

@@ -16,7 +16,7 @@ POST - http://localhost:8502/ticket
 {
     "description": "Test Ticket 1",
     "notes": "Test Ticket 1 - Docker Compose Error",
-    "assignee": "aturk",
+    "assignee": "e3141d44-a17b-49e3-9a2f-1b9c48f0c767",
     "priorityType": "URGENT",
     "ticketStatus": "OPEN",
     "ticketDate": "2020-05-05"

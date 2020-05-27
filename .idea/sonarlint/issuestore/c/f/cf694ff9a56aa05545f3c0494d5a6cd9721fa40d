@@ -1,0 +1,9 @@
+
+¬
+java:S44496"ŽAnnotate the parameter with @javax.annotation.Nullable in method 'findById' declaration, or make sure that null can not be passed as argument.(ÓæúÓ8Ó”‡è¤.
+^
+java:S1854%"<Remove this useless assignment to local variable "accounts".(ˆ¬µƒýÿÿÿÿ8Ó”‡è¤.
+O
+java:S1481%"-Remove this unused "accounts" local variable.(ˆ¬µƒýÿÿÿÿ8Ó”‡è¤.
+Z
+java:S1068"8Remove this unused "accountServiceClient" private field.(ùÑÉüøÿÿÿÿ8›«¥.
