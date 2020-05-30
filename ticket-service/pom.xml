@@ -10,7 +10,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
+
     <artifactId>ticket-service</artifactId>
+    <version>10.0.1</version>
+    <name>ticket-service</name>
+    <description>Ticket Service</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -54,6 +58,18 @@
             <groupId>com.microservice</groupId>
             <artifactId>service-feign-client</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
         </dependency>
 
         <dependency>

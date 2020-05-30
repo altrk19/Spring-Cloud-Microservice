@@ -8,10 +8,8 @@ spring:
       cluster-nodes: 172.28.226.97:9300
       repositories:
         enabled: true
-
   application:
     name: ticket-service
-
   datasource:
     url: jdbc:mysql://172.28.226.97:3306/microserviceapp
     username: root
@@ -22,6 +20,15 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+  rabbitmq:
+    host: 172.28.226.97
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: msqueue
 
 eureka:
   client:

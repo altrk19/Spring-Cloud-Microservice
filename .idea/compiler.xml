@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="account-service" />
-        <module name="config-server" />
         <module name="eureka-server" />
+        <module name="notification-service" />
+        <module name="config-server" />
         <module name="service-feign-client" />
         <module name="ticket-service" />
       </profile>
@@ -18,6 +19,7 @@
       <module name="config-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="microservice-app" target="1.8" />
+      <module name="notification-service" target="1.8" />
       <module name="service-communications" target="1.8" />
       <module name="service-feign-client" target="1.8" />
       <module name="service-parent" target="1.8" />
@@ -29,6 +31,7 @@
       <module name="account-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
       <module name="service-communications" options="-parameters" />
       <module name="service-feign-client" options="-parameters" />
       <module name="ticket-service" options="-parameters" />

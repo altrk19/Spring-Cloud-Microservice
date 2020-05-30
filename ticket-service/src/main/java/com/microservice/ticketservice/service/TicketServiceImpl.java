@@ -2,14 +2,13 @@ package com.microservice.ticketservice.service;
 
 import com.microservice.client.AccountServiceClient;
 import com.microservice.client.dto.AccountResource;
-import com.microservice.ticketservice.model.elastic.TicketEntityEs;
-import com.microservice.ticketservice.repo.elastic.TicketRepositoryEs;
 import com.microservice.ticketservice.dto.TicketResource;
 import com.microservice.ticketservice.model.PriorityType;
 import com.microservice.ticketservice.model.TicketEntity;
 import com.microservice.ticketservice.model.TicketStatus;
+import com.microservice.ticketservice.model.elastic.TicketEntityEs;
 import com.microservice.ticketservice.repo.TicketRepository;
-import org.modelmapper.ModelMapper;
+import com.microservice.ticketservice.repo.elastic.TicketRepositoryEs;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -22,16 +21,17 @@ import java.util.Objects;
 public class TicketServiceImpl implements TicketService {
     private final TicketRepository ticketRepository;
     private final TicketRepositoryEs ticketRepositoryEs;
-    private final ModelMapper modelMapper;
     private final AccountServiceClient accountServiceClient;
+    private final TicketNotificationService ticketNotificationService;
 
     public TicketServiceImpl(TicketRepository ticketRepository,
-                             TicketRepositoryEs ticketRepositoryEs, ModelMapper modelMapper,
-                             AccountServiceClient accountServiceClient) {
+                             TicketRepositoryEs ticketRepositoryEs,
+                             AccountServiceClient accountServiceClient,
+                             TicketNotificationService ticketNotificationService) {
         this.ticketRepository = ticketRepository;
         this.ticketRepositoryEs = ticketRepositoryEs;
-        this.modelMapper = modelMapper;
         this.accountServiceClient = accountServiceClient;
+        this.ticketNotificationService = ticketNotificationService;
     }
 
     @Override
@@ -67,8 +67,12 @@ public class TicketServiceImpl implements TicketService {
         // save ElasticSearch
         ticketRepositoryEs.save(model);
 
-        // return dto object
         ticketDto.setId(ticket.getId());
+
+        //send message to queue
+        ticketNotificationService.sendToQueue(ticket);
+
+        // return dto object
         return ticketDto;
     }
 
