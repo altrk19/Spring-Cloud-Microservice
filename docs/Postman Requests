@@ -11,7 +11,10 @@ POST - http://localhost:8501/account
 2. Get All Accounts
 GET - http://localhost:8501/account
 
-3.Create Ticket
+3. Get Single Account
+http://localhost:8501/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e
+
+4.Create Ticket
 POST - http://localhost:8502/ticket
 {
     "description": "Test Ticket 1",

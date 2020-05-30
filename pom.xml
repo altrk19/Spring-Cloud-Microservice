@@ -29,6 +29,8 @@
         <module>service-feign-client</module>
         <module>notification-service</module>
         <module>zipkin-server</module>
+        <module>gateway-server</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
     <dependencyManagement>

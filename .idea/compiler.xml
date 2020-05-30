@@ -13,12 +13,16 @@
         <module name="zipkin-server" />
         <module name="service-feign-client" />
         <module name="ticket-service" />
+        <module name="hystrix-dashboard" />
+        <module name="gateway-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="account-service" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="gateway-server" target="1.8" />
+      <module name="hystrix-dashboard" target="1.8" />
       <module name="microservice-app" target="1.8" />
       <module name="notification-service" target="1.8" />
       <module name="service-communications" target="1.8" />
@@ -33,6 +37,8 @@
       <module name="account-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="hystrix-dashboard" options="-parameters" />
       <module name="notification-service" options="-parameters" />
       <module name="service-communications" options="-parameters" />
       <module name="service-feign-client" options="-parameters" />
