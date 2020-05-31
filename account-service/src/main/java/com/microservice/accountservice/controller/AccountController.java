@@ -17,29 +17,30 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity<Slice<AccountResource>> getAll(Pageable pageable) {
-        return ResponseEntity.ok(accountService.getAll(pageable));
+    public ResponseEntity<Slice<AccountResource>> getAllAccounts(Pageable pageable) {
+        return ResponseEntity.ok(accountService.getAllAccounts(pageable));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AccountResource> get(@PathVariable("id") String id) {
-        return ResponseEntity.ok(accountService.get(id));
+    public ResponseEntity<AccountResource> getSingleAccount(@PathVariable("id") String id) {
+        return ResponseEntity.ok(accountService.getSingleAccount(id));
     }
 
     @PostMapping
-    public ResponseEntity<AccountResource> save(@RequestBody AccountResource accountResource) {
-        return ResponseEntity.ok(accountService.save(accountResource));
+    public ResponseEntity<AccountResource> createAccount(@RequestBody AccountResource accountResource) {
+        return ResponseEntity.ok(accountService.createAccount(accountResource));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<AccountResource> update(@PathVariable("id") String id,
-                                                  @RequestBody AccountResource accountResource) {
-        return ResponseEntity.ok(accountService.update(id, accountResource));
+    public ResponseEntity<AccountResource> updateAccount(@PathVariable("id") String id,
+                                                         @RequestBody AccountResource accountResource) {
+        return ResponseEntity.ok(accountService.updateAccount(id, accountResource));
     }
 
-    @DeleteMapping
-    public void delete(String id) {
-        accountService.delete(id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAccount(@PathVariable("id") String id) {
+        accountService.deleteAccount(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

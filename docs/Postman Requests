@@ -1,5 +1,17 @@
-1. Create Account
+##### Account
+1. Get All Accounts
+GET - http://localhost:8501/account
+GET - http://localhost:8501/account?size=20&page=0
+GET - http://localhost:8088/account -> gateway
+GET - http://localhost:8088/account?size=20&page=0 -> gateway
+
+2. Get Single Account
+http://localhost:8501/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e
+http://localhost:8088/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e -> gateway
+
+3. Create Account
 POST - http://localhost:8501/account
+POST - http://localhost:8088/account -> gateway
 {
 	"username" : "aturk",
     "name" : "Ali",
@@ -8,14 +20,38 @@ POST - http://localhost:8501/account
     "birthDate" : "1900-01-01"
 }
 
-2. Get All Accounts
-GET - http://localhost:8501/account
+4. Update Account
+PUT - http://localhost:8501/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e
+PUT - http://localhost:8088/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e -> gateway
+{
+	"username" : "update1",
+    "name" : "update2",
+    "surname" : "update3",
+    "email" : "update4@gmail.com",
+    "birthDate" : "1925-01-01"
+}
 
-3. Get Single Account
-http://localhost:8501/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e
+5. Delete Account
+DELETE - http://localhost:8501/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e
+DELETE - http://localhost:8088/account/757afd00-7058-4ba1-88e2-d5c2ac37ee2e -> gateway
 
-4.Create Ticket
+
+
+
+##### Ticket
+1.Get All Tickets
+GET - http://localhost:8502/ticket
+GET - http://localhost:8502/ticket?size=20&page=0
+GET - http://localhost:8088/ticket                -> gateway
+GET - http://localhost:8088/ticket?size=20&page=0 -> gateway
+
+2.Get Single Ticket
+http://localhost:8502/ticket/7fa2ace3-9f76-4736-8c90-33e2130458e9
+http://localhost:8088/ticket/7fa2ace3-9f76-4736-8c90-33e2130458e9 -> gateway
+
+3.Create Ticket
 POST - http://localhost:8502/ticket
+POST - http://localhost:8088/ticket -> gateway
 {
     "description": "Test Ticket 1",
     "notes": "Test Ticket 1 - Docker Compose Error",
@@ -25,3 +61,16 @@ POST - http://localhost:8502/ticket
     "ticketDate": "2020-05-05"
 }
 
+4.Update Ticket
+PUT - http://localhost:8088/ticket/7fa2ace3-9f76-4736-8c90-33e2130458e9
+{
+    "description": "Test updated 3",
+    "notes": "Test updated 1 - Docker Compose Error",
+    "assignee": "757afd00-7058-4ba1-88e2-d5c2ac37ee2e",
+    "priorityType": "URGENT",
+    "ticketStatus": "OPEN",
+    "ticketDate": "2019-05-05"
+}
+
+5.Delete Ticket
+DELETE - http://localhost:8088/ticket/7fa2ace3-9f76-4736-8c90-33e2130458e9

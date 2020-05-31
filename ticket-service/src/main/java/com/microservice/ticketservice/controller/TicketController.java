@@ -16,24 +16,30 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
+    @GetMapping
+    public ResponseEntity<Page<TicketResource>> getAllTickets(Pageable pageable) {
+        return ResponseEntity.ok(ticketService.getAllAccounts(pageable));
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<TicketResource> getById(@PathVariable String id) {
-        return ResponseEntity.ok(ticketService.getById(id));
+    public ResponseEntity<TicketResource> getSingleTicket(@PathVariable String id) {
+        return ResponseEntity.ok(ticketService.getSingleTicket(id));
     }
 
     @PostMapping
     public ResponseEntity<TicketResource> createTicket(@RequestBody TicketResource ticketDto) {
-        return ResponseEntity.ok(ticketService.save(ticketDto));
+        return ResponseEntity.ok(ticketService.createTicket(ticketDto));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<TicketResource> updateTicket(@PathVariable String id,
                                                        @RequestBody TicketResource ticketDto) {
-        return ResponseEntity.ok(ticketService.update(id, ticketDto));
+        return ResponseEntity.ok(ticketService.updateTicket(id, ticketDto));
     }
 
-    @GetMapping
-    public ResponseEntity<Page<TicketResource>> getAll(Pageable pageable) {
-        return ResponseEntity.ok(ticketService.getPagination(pageable));
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTicket(@PathVariable String id) {
+        ticketService.deleteTicket(id);
+        return ResponseEntity.noContent().build();
     }
 }

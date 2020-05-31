@@ -5,8 +5,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface TicketService {
-    TicketResource save(TicketResource ticketDto);
-    TicketResource update(String id, TicketResource ticketDto);
-    TicketResource getById(String ticketId);
-    Page<TicketResource> getPagination(Pageable pageable);
+    Page<TicketResource> getAllAccounts(Pageable pageable);
+    TicketResource getSingleTicket(String ticketId);
+    TicketResource createTicket(TicketResource ticketDto);
+    TicketResource updateTicket(String id, TicketResource ticketDto);
+    void deleteTicket(String ticketId);
 }
